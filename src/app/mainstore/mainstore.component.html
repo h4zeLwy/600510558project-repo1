@@ -1,0 +1,35 @@
+html(ng-app="storeApp")
+  head
+    meta(lang="es")
+  body(ng-controller="storeCtrl")
+    .navBar
+      h1.c-white.center Game Store :.:.:..::
+      img(src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Video_game_controller_icon_designed_by_Maico_Amorim.svg/2000px-Video_game_controller_icon_designed_by_Maico_Amorim.svg.png")
+      
+    .pane
+      .item
+        .preview.img_1
+          button.btn-arcade.strong Do you Like to buy?
+        .information
+          p {{ products[0].product }}
+          input(value="",ng-model="ctrl.quantity1",name="item1",placeholder="Introduzca el monto",type="number",require)
+          p Precio Pieza : $ {{ products[0].price }}
+          p Monto Total : $ {{ products[0].price * ctrl.quantity1 }}
+          
+      .item
+        .preview.img_2
+          button.btn-arcade.strong Do you Like to buy?
+        .information
+          p {{ products[1].product }}
+          input(value="0",name="",placeholder="Introduzca el monto",ng-model="ctrl.quantity2",type="number",require)
+          p Precio Pieza : $ {{ products[1].price }}
+          p Monto Total : $ {{ products[1].price * ctrl.quantity2}}
+          
+      .item
+        .preview.img_3
+          button.btn-arcade.strong Do you Like to buy?
+        .information
+          p {{ products[2].product }}
+          input(value="",name="",placeholder="Introduzca el monto",ng-model="ctrl.quantity3",type="number",require)
+          p Precio Pieza : $ {{ products[2].price }}
+          p Monto Total : $ {{ products[2].price * ctrl.quantity3}}

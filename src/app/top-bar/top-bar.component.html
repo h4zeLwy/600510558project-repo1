@@ -1,0 +1,16 @@
+<a routerLink="/mainpage"><h1>Hazel Game Shop</h1></a>
+<h5><nav>
+  <a routerLink="/store">Store</a>
+  </nav>
+  </h5>
+  <a *ngIf="isLoggedIn" [routerLink]="['/store']" style="color: red">Welcome : {{ email }}</a>
+<h5 style ="color: yellow">Balance : {{money}} </h5>
+
+<h6>
+  
+ <nav> <a *ngIf="!isLoggedIn" routerLink="/login">Login</a></nav>
+  <a *ngIf="isLoggedIn" [routerLink]="['/cart']" class="button fancy-button"><i class="material-icons">shopping_cart</i>Checkout</a>
+ <a *ngIf="isLoggedIn" (click)="logout()">  Logout</a>
+ <button class="btn btn btn-outline-light my-2 my-sm-2" style="margin-right: 20px; border: 2px solid" routerLink="/signup" *ngIf="!isLoggedIn">Register</button>
+</h6>
+

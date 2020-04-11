@@ -1,0 +1,15 @@
+
+
+<h2>Cart</h2>
+<button (click)="clearCart()">Clear</button>
+<div *ngFor="let product of items; index as productId">
+  <h3><a [title]="product.name + ' details'" [routerLink]="['/products', productId]">{{product.name}}</a></h3>
+  <p *ngIf="product.description">
+    <b>Description</b>: {{product.description}}
+  </p>
+  
+    <b>Price</b>: {{ product.price | currency:'THB' }}
+
+</div>
+<b>
+<p class="sum">Total Cost: {{ sum | currency:'THB' }}</p></b>

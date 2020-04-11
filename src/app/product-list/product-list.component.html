@@ -1,0 +1,24 @@
+<h2>Products</h2>
+<div *ngIf="products; else Load">
+<div *ngFor="let product of products">
+  <h3>
+    <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
+    {{ product.name }}
+    </a>
+  </h3>
+
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+  
+  <p *ngIf="product.price">
+    Price: {{ product.price }} Baht
+  </p>
+
+  <button (click)="share()">
+    Buy
+    </button>
+
+</div>
+
+
